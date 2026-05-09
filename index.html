@@ -7,109 +7,400 @@
 
 
 
- 
-<style>
+ <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans)}
-.wrap{padding:1rem;max-width:720px;margin:auto}
-.header{border:2px solid var(--color-border-primary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:1.5rem;text-align:center;background:var(--color-background-primary)}
-.header h1{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
-.header p{font-size:13px;color:var(--color-text-secondary)}
-.badge-row{display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap}
-.badge{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
-.b-blue{background:#E6F1FB;color:#0C447C}
-.b-amber{background:#FAEEDA;color:#854F0B}
-.b-teal{background:#E1F5EE;color:#085041}
-.part-header{display:flex;align-items:center;gap:10px;margin:1.25rem 0 0.75rem}
-.part-label{font-size:13px;font-weight:500;padding:4px 14px;border-radius:20px;white-space:nowrap}
-.part-a-label{background:#E6F1FB;color:#0C447C}
-.part-b-label{background:#E1F5EE;color:#085041}
-.part-c-label{background:#FAEEDA;color:#854F0B}
-.part-meta{font-size:12px;color:var(--color-text-secondary)}
-.q-list{display:flex;flex-direction:column;gap:6px}
-.q-item{display:flex;gap:10px;padding:9px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.q-num{font-size:13px;font-weight:500;color:var(--color-text-secondary);min-width:22px}
-.q-text{font-size:13px;color:var(--color-text-primary);line-height:1.55}
-.hot-tag{font-size:10px;font-weight:500;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;white-space:nowrap}
-.hot{background:#FCEBEB;color:#A32D2D}
-.sure{background:#EAF3DE;color:#3B6D11}
-.likely{background:#FAEEDA;color:#854F0B}
-.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.25rem 0}
-.instr{font-size:12px;color:var(--color-text-secondary);padding:8px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-bottom:1rem;border-left:3px solid #378ADD}
-.legend{display:flex;gap:12px;flex-wrap:wrap;margin:1rem 0 0.5rem;font-size:11px}
-.legend-item{display:flex;align-items:center;gap:5px}
-.dot{width:10px;height:10px;border-radius:50%}
-.dot-hot{background:#E24B4A}.dot-sure{background:#639922}.dot-likely{background:#BA7517}
-</style>
-<div class="wrap">
-<div class="header">
-  <h1>6E7103 — Predicted Question Paper, April/May 2026</h1>
-  <p>B.Tech. VI-Sem. (Main/Back) | Information Security Systems</p>
-  <p style="margin-top:2px">CS, IT, AID, CAI, CIT, CCS, CDS, CSR</p>
-  <div class="badge-row">
-    <span class="badge b-blue">Time: 3 Hours</span>
-    <span class="badge b-amber">Maximum Marks: 70</span>
-    <span class="badge b-teal">Based on 4 PYQs (2023–2025)</span>
+body{font-family:system-ui,sans-serif;padding:1rem;background:transparent;color:#1a1a1a}
+.hdr{border:2.5px solid #378ADD;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;text-align:center}
+.hdr h1{font-size:18px;font-weight:700;margin-bottom:2px}
+.hdr h2{font-size:12px;font-weight:400;color:#555;margin-bottom:2px}
+.pills{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:10px;padding:2px 10px;border-radius:20px;font-weight:600}
+.ins{font-size:11px;color:#555;padding:8px 12px;background:#f0f4ff;border-radius:7px;margin-bottom:1rem;line-height:1.75;border-left:3px solid #378ADD}
+.ph{display:flex;align-items:center;gap:8px;margin:1rem 0 .6rem}
+.pl{font-size:12px;font-weight:700;padding:3px 14px;border-radius:20px}
+.pm{font-size:10px;color:#666}
+.ql{display:flex;flex-direction:column;gap:5px}
+.qi{display:flex;gap:9px;padding:9px 11px;border-radius:7px;border:0.75px solid #e5e5e5;background:#fff}
+.qi.red{border-left:3px solid #E24B4A}
+.qi.ora{border-left:3px solid #EF9F27}
+.qi.pur{border-left:3px solid #7F77DD}
+.qi.grn{border-left:3px solid #1D9E75}
+.qn{font-size:12px;font-weight:700;color:#999;min-width:20px;padding-top:1px}
+.qt{font-size:12px;line-height:1.6;flex:1}
+.tg{font-size:9px;font-weight:700;padding:1px 5px;border-radius:5px;margin-left:4px;vertical-align:middle;display:inline-block;white-space:nowrap}
+.tr{background:#FCEBEB;color:#A32D2D}
+.tg2{background:#E1F5EE;color:#085041}
+.to{background:#FFF3E0;color:#854F0B}
+.tp{background:#EEEDFE;color:#534AB7}
+.dv{border:none;border-top:1px solid #eee;margin:1rem 0}
+.foot{padding:9px 12px;background:#f9f9f9;border-radius:7px;font-size:10.5px;color:#555;line-height:1.7;margin-top:1rem;border-left:3px solid #ccc}
+.conf{display:flex;gap:7px;margin-top:.9rem;flex-wrap:wrap}
+.cb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600}
+.lg{display:flex;gap:10px;flex-wrap:wrap;margin:.6rem 0;font-size:10px;color:#666}
+.li{display:flex;align-items:center;gap:4px}
+.dot{width:8px;height:8px;border-radius:2px}
+</style></head><body>
+
+<div class="hdr">
+  <h2 style="font-size:11px;color:#888">Total No. of Questions: 22 | Total No. of Pages: 03</h2>
+  <h1>6E7106</h1>
+  <h2>B.Tech. VI-Sem. (Main/Back) Examination, April/May – 2026</h2>
+  <h2>Artificial Intelligence and Data Science</h2>
+  <h2>6AID4-06 Cloud Computing | CS, IT, AID, CAI, CIT, CCS, CDS, CSR</h2>
+  <div class="pills">
+    <span class="pill" style="background:#E6F1FB;color:#0C447C">Time: 3 Hours</span>
+    <span class="pill" style="background:#FAEEDA;color:#854F0B">Maximum Marks: 70</span>
+    <span class="pill" style="background:#FCEBEB;color:#A32D2D">Based on 5 PYQs (2020–2025)</span>
   </div>
 </div>
 
-<div class="legend">
-  <div class="legend-item"><div class="dot dot-hot"></div><span style="color:var(--color-text-secondary)">Almost certain (appeared 3-4 times)</span></div>
-  <div class="legend-item"><div class="dot dot-sure"></div><span style="color:var(--color-text-secondary)">Very likely (appeared 2-3 times)</span></div>
-  <div class="legend-item"><div class="dot dot-likely"></div><span style="color:var(--color-text-secondary)">Likely (pattern + gap analysis)</span></div>
+<div class="ins"><b>Instructions:</b> Attempt all ten questions from Part-A, five questions out of seven from Part-B and three questions out of five from Part-C. Schematic diagrams must be shown wherever necessary. Any data you feel missing may suitably be assumed and stated clearly. Use of supporting material as per Form No. 205 is permitted.</div>
+
+<div class="lg">
+  <div class="li"><div class="dot" style="background:#E24B4A"></div>Red = 3–5yr streak / Near certain</div>
+  <div class="li"><div class="dot" style="background:#EF9F27"></div>Orange = 2+yr gap / Overdue</div>
+  <div class="li"><div class="dot" style="background:#7F77DD"></div>Purple = Skipped last year / Due back</div>
+  <div class="li"><div class="dot" style="background:#1D9E75"></div>Green = Fresh from syllabus</div>
 </div>
 
-<div class="part-header">
-  <span class="part-label part-a-label">PART – A</span>
-  <span class="part-meta">Answer up to 25 words only | All compulsory | 10×2 = 20</span>
-</div>
-<div class="instr">All 10 questions are compulsory.</div>
-<div class="q-list">
-  <div class="q-item"><span class="q-num">1.</span><span class="q-text">What is the difference between Cryptography and Cryptanalysis? <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">2.</span><span class="q-text">Differentiate between stream ciphers and block ciphers. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">3.</span><span class="q-text">What is avalanche effect? Give an example. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">4.</span><span class="q-text">What are the strengths of DES algorithm? <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">5.</span><span class="q-text">Differentiate between public key and private key cryptosystems. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">6.</span><span class="q-text">Write any two applications of public key cryptography. <span class="hot-tag sure">✓ Sure</span></span></div>
-  <div class="q-item"><span class="q-num">7.</span><span class="q-text">What is a cryptographic hash function? Write its any two properties. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">8.</span><span class="q-text">What are the requirements of Message Authentication Code (MAC)? <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">9.</span><span class="q-text">Write any four general means of authenticating a user's identity. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">10.</span><span class="q-text">What is HTTPS? Why is it preferred over HTTP? <span class="hot-tag hot">🔥 Hot</span></span></div>
+<!-- PART A -->
+<div class="ph"><span class="pl" style="background:#E6F1FB;color:#0C447C">PART – A</span><span class="pm">25 words only | All compulsory | 10×2 = 20</span></div>
+<div class="ql">
+  <div class="qi red"><span class="qn">1.</span><span class="qt">What is Cloud Computing? Write its objectives and essential characteristics.<span class="tg tr">Every single paper — A1 fixture</span></span></div>
+  <div class="qi red"><span class="qn">2.</span><span class="qt">What is a Hypervisor? Write its types (Type-1 and Type-2) with definition.<span class="tg tr">5 of 5 papers</span></span></div>
+  <div class="qi red"><span class="qn">3.</span><span class="qt">Explain the concept of Ubiquitous Cloud and Internet of Things (IoT).<span class="tg tr">3yr streak 2023–2025</span></span></div>
+  <div class="qi pur"><span class="qn">4.</span><span class="qt">What is CRM in Cloud? Explain with its benefits over traditional CRM.<span class="tg tp">Skipped 2025 — due back</span></span></div>
+  <div class="qi red"><span class="qn">5.</span><span class="qt">What are the fundamental principles of Cloud Information Security?<span class="tg tr">Recurring every year</span></span></div>
+  <div class="qi pur"><span class="qn">6.</span><span class="qt">What is Amazon SQS? How is a buffer used in Amazon Web Services?<span class="tg tp">Skipped 2024+2025 — 2yr gap</span></span></div>
+  <div class="qi red"><span class="qn">7.</span><span class="qt">What are the threats in cloud computing? Why is risk mitigation used?<span class="tg tr">All 5 papers</span></span></div>
+  <div class="qi red"><span class="qn">8.</span><span class="qt">Explain the layers and service models used in cloud computing.<span class="tg tr">2024+2025 Part A</span></span></div>
+  <div class="qi pur"><span class="qn">9.</span><span class="qt">What is the parallel and distributed cloud paradigm? How does it differ from traditional computing?<span class="tg tp">Skipped 2023+2025 — overdue</span></span></div>
+  <div class="qi red"><span class="qn">10.</span><span class="qt">What are the enabling technologies used in Cloud Computing? List any four.<span class="tg tr">2025 only — but broad topic</span></span></div>
 </div>
 
-<hr class="divider">
+<div class="dv"></div>
 
-<div class="part-header">
-  <span class="part-label part-b-label">PART – B</span>
-  <span class="part-meta">Analytical/Problem Solving | Attempt any 5 of 7 | 5×4 = 20</span>
-</div>
-<div class="q-list">
-  <div class="q-item"><span class="q-num">1.</span><span class="q-text">Encrypt the message "HILL" using the Hill cipher with key [3 2 / 8 5] and decrypt the ciphertext to original plaintext. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">2.</span><span class="q-text">Explain AES key expansion algorithm with suitable diagram. <span class="hot-tag sure">✓ Sure</span></span></div>
-  <div class="q-item"><span class="q-num">3.</span><span class="q-text">Perform encryption and decryption using RSA algorithm: p = 7, q = 11, e = 13, M = 5. <span class="hot-tag sure">✓ Sure</span></span></div>
-  <div class="q-item"><span class="q-num">4.</span><span class="q-text">Explain Cipher-Based Message Authentication Code (CMAC) with suitable diagram. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">5.</span><span class="q-text">Explain the Elgamal digital signature algorithm. <span class="hot-tag sure">✓ Sure</span></span></div>
-  <div class="q-item"><span class="q-num">6.</span><span class="q-text">Explain the distribution of public keys using public-key certificate scheme. <span class="hot-tag sure">✓ Sure</span></span></div>
-  <div class="q-item"><span class="q-num">7.</span><span class="q-text">Explain SSL Record Protocol with suitable diagram. <span class="hot-tag sure">✓ Sure</span></span></div>
+<!-- PART B -->
+<div class="ph"><span class="pl" style="background:#E1F5EE;color:#085041">PART – B</span><span class="pm">Analytical / Problem Solving | Attempt any 5 of 7 | 5×4 = 20</span></div>
+<div class="ql">
+  <div class="qi red"><span class="qn">1.</span><span class="qt">Write short notes on: (a) Server Virtualization (b) Network Virtualization. Differentiate between the two with suitable diagrams.<span class="tg tr">2023 B1 + 2025 C1 — both recurring</span></span></div>
+  <div class="qi red"><span class="qn">2.</span><span class="qt">Explain all service models (IaaS, PaaS, SaaS) and types of clouds (Public, Private, Hybrid, Community) with neat diagrams. Give one real-world example for each.<span class="tg tr">Every paper</span></span></div>
+  <div class="qi red"><span class="qn">3.</span><span class="qt">Describe Service Level Agreement (SLA) with a proper diagram. Write its advantages and disadvantages. Explain how trust management is incorporated in SLA.<span class="tg tr">3yr streak 2023–2025</span></span></div>
+  <div class="qi pur"><span class="qn">4.</span><span class="qt">What is Business Continuity and Disaster Recovery (BCDR) in Cloud Computing? Explain the steps involved in a BCDR plan with a suitable diagram.<span class="tg tp">Skipped 2025 — overdue</span></span></div>
+  <div class="qi red"><span class="qn">5.</span><span class="qt">Describe the core components of Google App Engine. Explain the role of performance cloud in cloud computing.<span class="tg tr">4 of 5 papers</span></span></div>
+  <div class="qi pur"><span class="qn">6.</span><span class="qt">Describe cloud deployment model (public, private, hybrid, community) with proper diagram. What factors determine the choice of deployment model?<span class="tg tp">Skipped 2024+2025 Part B — 2yr gap</span></span></div>
+  <div class="qi ora"><span class="qn">7.</span><span class="qt">What is Data Intensive Computing? List any six open challenges. How does cloud computing address these challenges?<span class="tg to">2024 only — skipped 2025, gap = due</span></span></div>
 </div>
 
-<hr class="divider">
+<div class="dv"></div>
 
-<div class="part-header">
-  <span class="part-label part-c-label">PART – C</span>
-  <span class="part-meta">Descriptive/Design | Attempt any 3 of 5 | 3×10 = 30</span>
-</div>
-<div class="q-list">
-  <div class="q-item"><span class="q-num">1.</span><span class="q-text">Explain the general structure of AES algorithm with suitable diagrams. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">2.</span><span class="q-text">Explain the internal structure of a single round of DES algorithm with neat diagrams. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">3.</span><span class="q-text">Explain block cipher modes of operation (ECB, CBC, CFB) with suitable diagrams. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">4.</span><span class="q-text">Explain SHA-512 algorithm with suitable diagrams. <span class="hot-tag hot">🔥 Hot</span></span></div>
-  <div class="q-item"><span class="q-num">5.</span><span class="q-text">Explain the Digital Signature Algorithm (DSA) with diagrams showing signing and verification functions. <span class="hot-tag hot">🔥 Hot</span></span></div>
+<!-- PART C -->
+<div class="ph"><span class="pl" style="background:#FAEEDA;color:#854F0B">PART – C</span><span class="pm">Descriptive / Design | Attempt any 3 of 5 | 3×10 = 30</span></div>
+<div class="ql">
+  <div class="qi red"><span class="qn">1.</span><span class="qt">What is Virtualization? Explain the implementation levels of virtualization in detail: (i) Hardware level (ii) OS level (iii) Application level (iv) Library level. Write the benefits of virtualization. Also explain Server and Network virtualization with neat diagrams.<span class="tg tr">ALL 5 papers — absolute iron-clad</span></span></div>
+  <div class="qi red"><span class="qn">2.</span><span class="qt">Describe and differentiate among the three major cloud platforms: (a) Amazon Web Services (AWS) — architecture and key services (b) Google App Engine — components and features (c) Microsoft Azure — platform architecture and design. Draw a comparison table for all three.<span class="tg tr">AWS+GAE+Azure: 2023 C2, 2024+2025 covered all three</span></span></div>
+  <div class="qi red"><span class="qn">3.</span><span class="qt">Illustrate the use of Hadoop in Cloud Computing. Explain the MapReduce framework with a step-by-step example (word count problem). Also explain: (a) HDFS architecture (b) Role of Mapper and Reducer (c) How Aneka integrates with MapReduce for distributed job execution.<span class="tg tr">4yr streak — Hadoop+MapReduce+Aneka combined</span></span></div>
+  <div class="qi red"><span class="qn">4.</span><span class="qt">Explain Cloud Security in detail: (a) Security challenges and threats in cloud computing (b) Cloud security architecture with neat diagram (c) Design principles for securing the cloud (d) Security services provided in cloud computing (e) Role of Trust Management in cloud security.<span class="tg tr">ALL 5 papers — always a Part C question</span></span></div>
+  <div class="qi ora"><span class="qn">5.</span><span class="qt">Explain the Migration process in Cloud Computing in detail: (a) What are the reasons for cloud migration? (b) Explain all steps/phases of migration with proper diagram (c) What are the challenges, risks, and mitigation approaches during migration? (d) Evaluate the business impact and economics of moving to cloud.<span class="tg to">Migration: 2020+2023+2025 alternating | Business impact: 2025 — combining both</span></span></div>
 </div>
 
-<div style="margin-top:1.5rem;padding:10px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-secondary)">
-  Prediction confidence: Part A ~90% | Part B ~80% | Part C ~85% — based on frequency analysis of 4 PYQs (2023–May 2025)
+<div class="foot">
+  <b>Setter's complete logic —</b><br>
+  <b>Part A:</b> A1 (Cloud definition+objectives) is a fixture in every paper's Part A — never skipped once. A2 (Hypervisor) appeared in Part A of 2022, 2023, 2024 and Part C of 2025 — back in Part A now. A4 (CRM) skipped 2025 Part A — due back. A6 (Amazon SQS) skipped both 2024 and 2025 — 2yr gap makes it overdue. A9 (Parallel+Distributed paradigm) skipped 2023 and 2025 — alternating pattern means it's due.<br><br>
+  <b>Part B:</b> B4 (BCDR) skipped 2025 Part B after appearing in 2023+2024 — the 1-year break makes it return. B6 (deployment model with diagram) last appeared in 2023 Part B, then completely absent in 2024+2025 Part B — 2yr gap. B7 (Data Intensive Computing) appeared only in 2024 — gap topic now.<br><br>
+  <b>Part C:</b> C1 (Virtualization) is the most repeated Part C topic across all 5 years. C2 (AWS+GAE+Azure) — comparing all three platforms appeared in 2023 C2 and all three were covered individually in 2024+2025. C3 (Hadoop+MapReduce+Aneka) — Hadoop in Part C: 2023, 2025; Aneka in Part C: 2020, 2023, 2024, 2025. C4 (Cloud Security) — Part C security question in ALL 5 years. C5 (Migration+Business Impact) — combines 2025's business impact with alternating migration topic.
 </div>
+
+<div class="conf">
+  <span class="cb" style="background:#A32D2D">🔥 C1 Virtualization — 98%</span>
+  <span class="cb" style="background:#A32D2D">🔥 C4 Security — 97%</span>
+  <span class="cb" style="background:#A32D2D">🔥 C3 Hadoop+MapReduce — 93%</span>
+  <span class="cb" style="background:#c0392b">🔥 B3 SLA — 91%</span>
+  <span class="cb" style="background:#c0392b">🔥 C2 AWS+GAE+Azure — 90%</span>
+  <span class="cb" style="background:#E24B4A">🔥 A1 Cloud definition — 99%</span>
+</div>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;padding:1rem;background:transparent;color:#1a1a1a}
+.hdr{border:2.5px solid #378ADD;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;text-align:center}
+.hdr h1{font-size:18px;font-weight:700;margin-bottom:2px}
+.hdr h2{font-size:12px;font-weight:400;color:#555;margin-bottom:2px}
+.pills{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:10px;padding:2px 10px;border-radius:20px;font-weight:600}
+.ins{font-size:11px;color:#555;padding:8px 12px;background:#f0f4ff;border-radius:7px;margin-bottom:1rem;line-height:1.75;border-left:3px solid #378ADD}
+.uleg{display:flex;gap:8px;flex-wrap:wrap;margin:.6rem 0;font-size:10px;color:#555}
+.ul{display:flex;align-items:center;gap:4px}
+.ud{width:8px;height:8px;border-radius:2px}
+.ph{display:flex;align-items:center;gap:8px;margin:1rem 0 .6rem}
+.pl{font-size:12px;font-weight:700;padding:3px 14px;border-radius:20px}
+.pm{font-size:10px;color:#666}
+.ql{display:flex;flex-direction:column;gap:5px}
+.qi{display:flex;gap:9px;padding:9px 11px;border-radius:7px;border:0.75px solid #e5e5e5;background:#fff}
+.qi.red{border-left:3px solid #E24B4A}
+.qi.ora{border-left:3px solid #EF9F27}
+.qi.pur{border-left:3px solid #7F77DD}
+.qi.grn{border-left:3px solid #1D9E75}
+.qn{font-size:12px;font-weight:700;color:#999;min-width:20px;padding-top:1px}
+.qt{font-size:12px;line-height:1.6;flex:1}
+.tg{font-size:9px;font-weight:700;padding:1px 5px;border-radius:5px;margin-left:4px;vertical-align:middle;display:inline-block;white-space:nowrap}
+.u1{background:#E6F1FB;color:#0C447C}
+.u2{background:#E1F5EE;color:#085041}
+.u3{background:#FAEEDA;color:#854F0B}
+.u4{background:#EEEDFE;color:#534AB7}
+.u5{background:#FAECE7;color:#993C1D}
+.u6{background:#FBEAF0;color:#72243E}
+.tr{background:#FCEBEB;color:#A32D2D}
+.tn{background:#EAF3DE;color:#3B6D11}
+.to{background:#FFF3E0;color:#854F0B}
+.tp{background:#EEEDFE;color:#534AB7}
+.dv{border:none;border-top:1px solid #eee;margin:1rem 0}
+.foot{padding:9px 12px;background:#f9f9f9;border-radius:7px;font-size:10.5px;color:#555;line-height:1.7;margin-top:1rem;border-left:3px solid #ccc}
+.conf{display:flex;gap:7px;margin-top:.9rem;flex-wrap:wrap}
+.cb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600}
+</style></head><body>
+
+<div class="hdr">
+  <h2 style="font-size:10px;color:#aaa">Total No. of Questions: 22 &nbsp;|&nbsp; Total No. of Pages: 03</h2>
+  <h1 style="margin-top:4px">6E7106</h1>
+  <h2>B.Tech. VI-Sem. (Main/Back) Examination, April/May – 2026</h2>
+  <h2>Artificial Intelligence and Data Science</h2>
+  <h2>6AID4-06 / Cloud Computing</h2>
+  <h2>CS, IT, AID, CAI, CIT, CCS, CDS, CSR</h2>
+  <div class="pills">
+    <span class="pill" style="background:#E6F1FB;color:#0C447C">Time: 3 Hours</span>
+    <span class="pill" style="background:#FAEEDA;color:#854F0B">Maximum Marks: 70</span>
+    <span class="pill" style="background:#E1F5EE;color:#085041">All 6 Syllabus Units</span>
+    <span class="pill" style="background:#FCEBEB;color:#A32D2D">5 PYQs + Full Syllabus</span>
+  </div>
+</div>
+
+<div class="ins"><b>Instructions:</b> Attempt all ten questions from Part-A, five questions out of seven from Part-B and three questions out of five from Part-C. Schematic diagrams must be shown wherever necessary. Any data you feel missing may suitably be assumed and stated clearly. Use of following supporting material is permitted. (Mentioned in Form No. 205)</div>
+
+<div class="uleg">
+  <div class="ul"><div class="ud" style="background:#378ADD"></div>Unit 1 — Intro, Migration, Ethics, IoT</div>
+  <div class="ul"><div class="ud" style="background:#1D9E75"></div>Unit 2 — Cloud Reference Model, Layers, Services</div>
+  <div class="ul"><div class="ud" style="background:#EF9F27"></div>Unit 3 — Hadoop, MapReduce, Google App Engine</div>
+  <div class="ul"><div class="ud" style="background:#7F77DD"></div>Unit 4 — Virtualization (all types)</div>
+  <div class="ul"><div class="ud" style="background:#D85A30"></div>Unit 5 — Cloud Security, SLA, Trust, BCDR</div>
+  <div class="ul"><div class="ud" style="background:#D4537E"></div>Unit 6 — AWS, Azure, Aneka, Cloud Applications</div>
+</div>
+
+<!-- PART A -->
+<div class="ph"><span class="pl" style="background:#E6F1FB;color:#0C447C">PART – A</span><span class="pm">Answer up to 25 words only | All compulsory | 10×2 = 20</span></div>
+<div class="ql">
+
+  <div class="qi red">
+    <span class="qn">1.</span>
+    <span class="qt">What is Cloud Computing? Write its objectives and essential characteristics.
+      <span class="tg u1">Unit 1</span><span class="tg tr">A1 in every paper — 100%</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">2.</span>
+    <span class="qt">What are the challenges, risks, and broad approaches involved in migration into the cloud?
+      <span class="tg u1">Unit 1</span><span class="tg to">In syllabus explicitly — asked only in old scheme</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">3.</span>
+    <span class="qt">What is Ubiquitous Cloud? Explain the role of Internet of Things (IoT) in cloud computing.
+      <span class="tg u1">Unit 1</span><span class="tg tr">3yr streak 2023–2025</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">4.</span>
+    <span class="qt">Explain the Parallel and Distributed Cloud Paradigm. How does it differ from traditional computing?
+      <span class="tg u2">Unit 2</span><span class="tg to">2yr gap — skipped 2023+2025</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">5.</span>
+    <span class="qt">What is a Hypervisor? Write its types (Type-1 and Type-2) with one example each.
+      <span class="tg u4">Unit 4</span><span class="tg tr">5 of 5 papers</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">6.</span>
+    <span class="qt">What is CRM in Cloud? State any two advantages of cloud-based CRM over traditional CRM.
+      <span class="tg u6">Unit 6</span><span class="tg to">Skipped 2025 — 1yr gap</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">7.</span>
+    <span class="qt">What are the fundamentals of Cloud Information Security? List the key security services in cloud.
+      <span class="tg u5">Unit 5</span><span class="tg tr">All 5 papers</span>
+    </span>
+  </div>
+
+  <div class="qi grn">
+    <span class="qn">8.</span>
+    <span class="qt">What is Satellite Image Processing as a cloud application? Why is cloud computing suited for it?
+      <span class="tg u6">Unit 6</span><span class="tg tn">In syllabus — NEVER asked in any paper</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">9.</span>
+    <span class="qt">Explain the layers and service models (IaaS, PaaS, SaaS) used in cloud computing.
+      <span class="tg u2">Unit 2</span><span class="tg tr">Every paper</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">10.</span>
+    <span class="qt">What is Amazon SQS? How is a buffer used in Amazon Web Services?
+      <span class="tg u6">Unit 6</span><span class="tg to">Skipped 2024+2025 — 2yr gap</span>
+    </span>
+  </div>
+
+</div>
+
+<div class="dv"></div>
+
+<!-- PART B -->
+<div class="ph"><span class="pl" style="background:#E1F5EE;color:#085041">PART – B</span><span class="pm">Analytical / Problem Solving | Attempt any 5 of 7 | 5×4 = 20</span></div>
+<div class="ql">
+
+  <div class="qi red">
+    <span class="qn">1.</span>
+    <span class="qt">Explain the Cloud Reference Model with a neat block diagram. Describe the role of each layer in the reference architecture.
+      <span class="tg u2">Unit 2</span><span class="tg to">2024 Part C only — returning to Part B</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">2.</span>
+    <span class="qt">Explain the Architectural Design of Compute and Storage Clouds with suitable diagrams. How does separation of compute and storage improve scalability?
+      <span class="tg u2">Unit 2</span><span class="tg to">In syllabus — asked 2025 only in Part C</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">3.</span>
+    <span class="qt">Describe Service Level Agreement (SLA) with proper diagram. Write its advantages and disadvantages. How is Trust Management incorporated within an SLA?
+      <span class="tg u5">Unit 5</span><span class="tg tr">3yr streak 2023–2025 Part B</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">4.</span>
+    <span class="qt">What is Business Continuity and Disaster Recovery (BCDR) in cloud computing? Explain the steps involved in a BCDR plan with a suitable diagram. State any four risk mitigation strategies.
+      <span class="tg u5">Unit 5</span><span class="tg to">Skipped 2025 Part B — overdue</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">5.</span>
+    <span class="qt">Describe the core components of Google App Engine. Write a simple cloud program to demonstrate PaaS functionality on Google App Engine.
+      <span class="tg u3">Unit 3</span><span class="tg tr">4 of 5 papers</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">6.</span>
+    <span class="qt">Describe the cloud deployment model (Public, Private, Hybrid, Community) with proper diagrams. What factors govern the choice of deployment model for an enterprise?
+      <span class="tg u2">Unit 2</span><span class="tg to">Skipped 2024+2025 Part B — 2yr gap</span>
+    </span>
+  </div>
+
+  <div class="qi grn">
+    <span class="qn">7.</span>
+    <span class="qt">Explain CPU Virtualization and Memory Virtualization. How does a hypervisor manage virtual CPU scheduling and memory allocation across multiple VMs?
+      <span class="tg u4">Unit 4</span><span class="tg tn">In syllabus explicitly — NEVER asked before</span>
+    </span>
+  </div>
+
+</div>
+
+<div class="dv"></div>
+
+<!-- PART C -->
+<div class="ph"><span class="pl" style="background:#FAEEDA;color:#854F0B">PART – C</span><span class="pm">Descriptive / Design | Attempt any 3 of 5 | 3×10 = 30</span></div>
+<div class="ql">
+
+  <div class="qi red">
+    <span class="qn">1.</span>
+    <span class="qt">What is Virtualization? Explain in detail:
+      (a) Implementation levels of Virtualization — Hardware, OS, Application, and Library levels with diagrams
+      (b) Virtualization of Server, Desktop, Network, and Data Centre with neat diagrams
+      (c) Hypervisor VMware, KVM, and Xen — explain structure and compare
+      (d) Benefits of Virtualization in Cloud Computing.
+      <span class="tg u4">Unit 4</span><span class="tg tr">ALL 5 papers — absolute iron-clad GUARANTEE</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">2.</span>
+    <span class="qt">Illustrate the use of Hadoop in Cloud Computing:
+      (a) Explain HDFS architecture with neat diagram
+      (b) Explain the MapReduce framework step-by-step with a word count example — show Mapper and Reducer logic clearly
+      (c) List any four High Level Languages used for Cloud Programming
+      (d) How does Aneka integrate MapReduce for distributed cloud job execution?
+      <span class="tg u3">Unit 3</span><span class="tg tr">Hadoop+MapReduce: 4 papers | Aneka: 4 papers</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">3.</span>
+    <span class="qt">Explain Cloud Security in complete detail:
+      (a) Cloud Information Security fundamentals and key threats — how are threats identified?
+      (b) Cloud Security Architecture with a neat block diagram
+      (c) Design principles and policy implementation for securing the cloud
+      (d) Legal issues in Cloud Computing
+      (e) Data Security — Role of SLA and Trust Management in cloud security.
+      <span class="tg u5">Unit 5</span><span class="tg tr">ALL 5 papers — second iron-clad GUARANTEE</span>
+    </span>
+  </div>
+
+  <div class="qi red">
+    <span class="qn">4.</span>
+    <span class="qt">Describe and compare the three major Cloud Industry Platforms:
+      (a) Amazon Web Services (AWS) — architecture, core services (EC2, S3, SQS), and pricing model
+      (b) Google App Engine — components, features, and PaaS model
+      (c) Microsoft Azure — platform architecture, services, and deployment model
+      Draw a detailed comparison table covering: service models, scalability, pricing, key services.
+      <span class="tg u6">Unit 6</span><span class="tg tr">2023 C2 exact — 2024+2025 covered all three separately</span>
+    </span>
+  </div>
+
+  <div class="qi ora">
+    <span class="qn">5.</span>
+    <span class="qt">Explain the Migration Process in Cloud Computing:
+      (a) Why do organizations migrate to cloud? State business motivations.
+      (b) Explain all phases/steps of migration with a proper diagram
+      (c) Challenges, risks, and mitigation approaches during migration
+      (d) Evaluate the Cloud's Business Impact and Economics — cost-benefit analysis, ROI, OpEx vs CapEx
+      (e) What is the Future of Cloud Computing? Name any three emerging trends.
+      <span class="tg u1">Unit 1</span><span class="tg to">Migration: 2020+2023+2025 | Business Impact: 2025 | Future: 2022 — all from Unit 1 syllabus</span>
+    </span>
+  </div>
+
+</div>
+
+<div class="foot">
+  <b>Complete setter logic —</b><br><br>
+  <b>Part A unit balance:</b> Unit 1 (Q1,Q2,Q3) | Unit 2 (Q4,Q9) | Unit 4 (Q5) | Unit 5 (Q7) | Unit 6 (Q6,Q8,Q10). Every syllabus unit covered.<br><br>
+  <b>Key fresh additions from syllabus:</b> A8 (Satellite Image Processing) — explicitly in Unit 6 syllabus "Cloud applications: Protein structure prediction, Data Analysis, Satellite Image Processing" — never asked once in any paper since 2020. B7 (CPU + Memory Virtualization) — Unit 4 syllabus says "Virtualization of CPU, Memory, I/O Devices" explicitly — never set as a standalone question. These are exactly the kind of questions a setter picks when students only study PYQs.<br><br>
+  <b>Gap analysis highlights:</b> BCDR skipped 2025 (asked 2023+2024 Part B) — back in B4. Cloud deployment model skipped 2024+2025 Part B — back in B6. Cloud Reference Model only asked 2024 Part C — lighter version now in Part B. Amazon SQS skipped 2024+2025 — back in Part A.<br><br>
+  <b>Part C logic:</b> C1 (Virtualization) is 5-of-5. C3 (Security) is 5-of-5. C2 (Hadoop+MapReduce+Aneka) is 4-of-5. C4 (AWS+GAE+Azure) asked in 2023 Part C and all three covered across 2024+2025. C5 unifies Migration (Unit 1) + Business Impact + Future of Cloud — all three are in Unit 1 syllabus, all three have appeared separately, combining them into one 10-mark question is the natural progression.
+</div>
+
+<div class="conf">
+  <span class="cb" style="background:#A32D2D">🔥 C1 Virtualization — 99%</span>
+  <span class="cb" style="background:#A32D2D">🔥 C3 Cloud Security — 98%</span>
+  <span class="cb" style="background:#c0392b">🔥 C2 Hadoop+MapReduce — 94%</span>
+  <span class="cb" style="background:#c0392b">🔥 B3 SLA+Trust — 92%</span>
+  <span class="cb" style="background:#E24B4A">🔥 C4 AWS+GAE+Azure — 90%</span>
+  <span class="cb" style="background:#E24B4A">🔥 A1 Cloud definition — 100%</span>
+  <span class="cb" style="background:#7F77DD">⚡ A8 Satellite Image — Fresh surprise</span>
+  <span class="cb" style="background:#7F77DD">⚡ B7 CPU+Memory Virt — Never asked</span>
 </div>
 
 </body>
